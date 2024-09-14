@@ -11,17 +11,11 @@ HTML - Uses the correct HTML structure for the application. Will be able to make
 
 CSS - Will be used for styling and visual clarity of the site.
 
-JavaScript - The will be used to program login and different roles of the users (GM vs Player) Also to limit file access to certain users
+JavaScript - The will be used to program login and different roles of the users (GM vs Player) And to limit file access to certain users
 
 React - Multiple pages will need to be accessible by multiple users at once. 
 
-Service - Backend service with endpoints for:
-
-Retrieving and submitting file edits
-
-Retrieving and submitting permission changes
-
-Displaying relevant Dnd info using the https://5e-bits.github.io/docs/ service.
+Service - Backend service with endpoints for Retrieving and submitting file edits, Retrieving and submitting permission changes, and Displaying relevant Dnd info using the https://5e-bits.github.io/docs/ service.
 
 DB/Login - Store users including their roles and permissions 
 
