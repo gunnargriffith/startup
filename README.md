@@ -16,8 +16,11 @@ JavaScript - The will be used to program login and different roles of the users 
 React - Multiple pages will need to be accessible by multiple users at once. 
 
 Service - Backend service with endpoints for:
+
 Retrieving and submitting file edits
+
 Retrieving and submitting permission changes
+
 Displaying relevant Dnd info using the https://5e-bits.github.io/docs/ service.
 
 DB/Login - Store users including their roles and permissions 
