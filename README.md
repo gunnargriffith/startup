@@ -5,3 +5,15 @@ Collaborative storytelling is the core of all Table Top Role Playing Games, but 
 
 # Design
 ![LoreCoreSnip](https://github.com/user-attachments/assets/e174c4bd-d5d8-4d7a-8799-84c6ca78f981)
+
+# Technologies 
+HTML - Uses correct HTML structure for the application. Will be able to make multiple pages of notes accessible under certain conditions.
+CSS - Will be used for styling and visual clarity of the site.
+JavaScript - The will be used to program login and different roles of the users (GM vs Player) Also to limit file access to certain users
+React - Multiple pages will need to be accessible by multiple users at once. 
+Service - Backend service with endpoints for:
+retrieving and submitting file edits
+retrieving and submitting permission changes
+displaying relevant Dnd info using the https://5e-bits.github.io/docs/ service.
+DB/Login - Store users including their roles and permissions 
+WebSocket - If the notes are changed, they will be changed for all users. 
