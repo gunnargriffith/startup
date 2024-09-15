@@ -6,3 +6,5 @@ This is a useful link containing a bunch of syntax "https://docs.github.com/en/g
 Rember to pull first to get the current version, then edit, commit changes with a comment, and then push if there are no conflicts. 
 
 EXAMPLE STARTUP - "https://github.com/webprogramming260/startup-example/tree/main" 
+
+My server IP is http://98.80.67.144/
