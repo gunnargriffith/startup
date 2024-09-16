@@ -7,4 +7,4 @@ Remember to pull first to get the current version, then edit, commit changes wit
 
 EXAMPLE STARTUP - "https://github.com/webprogramming260/startup-example/tree/main" 
 
-My server IP is http://98.80.67.144/ and I have allocated an elastic address, REMEMBER TO CANCEL AFTER THE TERM
+My server IP is http://98.80.67.144/ and I have allocated an elastic address, REMEMBER TO CANCEL AFTER THE TERM But the new permanent one is 3.229.25.250
