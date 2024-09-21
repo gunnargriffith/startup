@@ -11,7 +11,7 @@ My server IP is http://98.80.67.144/ and I have allocated an elastic address, RE
 
 Using the Amazon Route 53 service I was able to purchase and link the domain http://lorecore.click and link it to the IP address, so now searching that opens my website. 
 
-We will be doing a lot of work in GitBash. HEre are the base commmands.  
+We will be doing a lot of work in GitBash. Here are the base commands.  
 echo - Output the parameters of the command
 cd - Change directory
 mkdir - Make directory
