@@ -20,3 +20,7 @@ Service - Backend service with endpoints for Retrieving and submitting file edit
 DB/Login - Store users including their roles and permissions 
 
 WebSocket - If the notes are changed, they will be changed for all users. 
+
+#HMTL Deliverable
+
+This is the structure and start of the LoreCore website.
