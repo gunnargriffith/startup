@@ -24,4 +24,9 @@ WebSocket - If the notes are changed, they will be changed for all users.
 # HMTL Deliverable
 
 This is the structure and start of the LoreCore website.
+
 **HTML Pages** - I made 4 pages: a Home/Login, a page for the player notes, a page for the GM/World notes, and a page to edit player permissions to access world notes
+
+**Links** - The header of all the pages links to the other pages. There are also fake links to the hypothical note pages. 
+
+
