@@ -29,4 +29,12 @@ This is the structure and start of the LoreCore website.
 
  [x] **Links** - The header of all the pages links to the other pages. There are also fake links to the hypothical note pages. 
 
+ [x] **Text** - The permissions decisions made are shown via text on the world lore page. 
+
+ [] **Images** - There are a few places where I could include images from the Dnd image API but I wasn't sure how to leave a placeholder.
+.
+ [x] **DB/Login** - The main page has a place for login, and you need to choose either GM or Player as well.
+
+ [x] **Websocket** - THe playnotes and world lore will be updatable by the users. 
+
 
