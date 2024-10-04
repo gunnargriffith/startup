@@ -67,3 +67,9 @@ man - Look up a command in the manual
 
 **CSS**
 
+CSS is about defining rules sets and rules. The sets are composed of declarations of a property: value. 
+
+There are Element type selectors: 
+"body {
+  font-family: sans-serif;
+}"
