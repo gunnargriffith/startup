@@ -73,3 +73,15 @@ There are Element type selectors:
 "body {
   font-family: sans-serif;
 }"
+
+Class selector to edit all instances of a classes appearance. 
+
+ID selector is to unique IDs marked with a # symbol
+
+Link to a table of delectations: https://learn.cs260.click/page/css/declarations/declarations_md
+
+There are also many more examples including founts and selectors forked on CodePen
+
+
+
+
