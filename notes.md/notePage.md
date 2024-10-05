@@ -80,6 +80,16 @@ ID selector is to unique IDs marked with a # symbol
 
 Link to a table of delectations: https://learn.cs260.click/page/css/declarations/declarations_md
 
+none - Don't display this element. The element still exists, but the browser will not render it.
+
+block - Display this element with a width that fills its parent element. A p or div element has block display by default.
+
+inline - Display this element with a width that is only as big as its content. A b or span element has inline display by default.
+
+flex - Display this element's children in a flexible orientation.
+
+grid - Display this element's children in a grid orientation.
+
 There are also many more examples including founts and selectors forked on CodePen
 
 
