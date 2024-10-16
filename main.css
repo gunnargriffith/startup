@@ -2,8 +2,23 @@ body {
     display: flex;
     flex-direction: column;
     min-width: 375px;
+    align-items: center;
+    
   }
   
   header {
     flex: 0 80px;
+    
   }
+
+  menu{
+    display: none;
+  }
+
+  
+
+  footer {
+    flex: 0 30px;
+    display: none;
+  }
+
