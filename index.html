@@ -28,19 +28,22 @@
 
     </header>
     <main>
-      <fieldset>
-        <p>Please login as a Game Master or Player:</p>
-        <label for="Game Master">Game Master</label>
-        <input type="checkbox" id="Game Master" name="gmCheckbox" value="Game Master" style="margin-right: 20px;" />
+      <fieldset class="loginMain">
+        <h4>Please login as a Game Master or Player:</h4>
+        <label class="checkBoxLabel" for="Game Master">Game Master</label>
+        <input class="textbox" type="checkbox" id="Game Master" name="gmCheckbox" value="Game Master" style="margin-right: 20px;" />
         
-        <label for="Player">Player</label>
-        <input type="checkbox" id="Player" name="pCheckbox" value="Player" />
+        <label class="checkBoxLabel" for="Player">Player</label>
+        <input class="textbox" type="checkbox" id="Player" name="pCheckbox" value="Player" />
         <br>
         <br>
-        
-        <input type="text" placeholder="your@email.com" />
-        <div>
-          <input type="password" placeholder="password" />
+        <div class="input-group mb-3">
+          <span class="input-group-text">@</span>
+          <input class="form-control" type="text" placeholder="your@email.com" />
+        </div>
+        <div class="input-group mb-3">
+          <span class="input-group-text">🔒</span>
+          <input class="form-control" type="password" placeholder="password" />
         </div>
         <a href="playernotes.html">
           <button type="submit">Login</button>
