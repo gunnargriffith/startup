@@ -51,7 +51,45 @@ header {
     background-color: #8b8b8b;
   }
 
+  .notesBox {
+    width: 300px;  
+    padding: 20px;
+    background-color: #f4f4f9; 
+    border: 2px solid #ccc;    
+    border-radius: 10px;       
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); 
+    margin: 20px auto;         
+    text-align: center;
+}
 
+
+.NotesTitle {
+    font-size: 24px;
+    font-weight: bold;
+    color: #333;               
+    margin-bottom: 15px;      
+    text-align: center;
+    border-bottom: 2px solid #ddd;  
+    padding-bottom: 10px;      
+}
+
+
+.noteEntry {
+    display: block;            
+    text-decoration: none;     
+    font-size: 18px;
+    color: #007BFF;           
+    margin: 10px 0;            
+    padding: 10px;             
+    border-radius: 5px;        
+    background-color: #e9f5ff; 
+    transition: background-color 0.3s, color 0.3s; 
+}
+
+.noteEntry:hover {
+    background-color: #007BFF; 
+    color: white;              
+}
 
 
   footer {
