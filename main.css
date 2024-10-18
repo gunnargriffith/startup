@@ -2,6 +2,7 @@ body {
     display: flex;
     flex-direction: column;
     min-width: 375px;
+    
 
 }
   
@@ -49,6 +50,7 @@ body {
     align-items: center;
     justify-content: space-around;
     background-color: #8b8b8b;
+    overflow-y: auto;
   }
   
   label {

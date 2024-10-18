@@ -4,7 +4,7 @@ html, body {
     height: 100%;
     font-family: Arial, sans-serif;
     background-color: #f0f0f0;
-    overflow-y: auto;    /* Enable vertical scrolling */
+    overflow-y: scroll;
 }
   
   header {
@@ -46,9 +46,11 @@ html, body {
     align-items: center;
     justify-content: space-around;
     background-color: #8b8b8b;
+    overflow-y: auto;
+    padding-bottom: 50px;
   }
   .container {
-    max-width: 800px;
+    /* max-width: 800px; */
     margin: 20px auto;
     padding: 20px;
     background-color: white;
@@ -56,7 +58,7 @@ html, body {
     border-radius: 10px;
 }
 
-/* Table and dropdown styling remains the same */
+
 .infoTable {
     width: 100%;
     border-collapse: collapse;
@@ -78,10 +80,10 @@ html, body {
     background-color: #f9f9f9;
 }
 
-/* Styling for dropdown sets */
+
 .dropdownSet {
     width: 100%;
-    margin-bottom: 20px; /* Space between sets */
+    margin-bottom: 20px; 
 }
 
 .dropdownSet h3 {
