@@ -37,4 +37,14 @@ This is the structure and start of the LoreCore website.
 
  [x] **Websocket** - THe playnotes and world lore will be updatable by the users. 
 
+# CSS Deliverable
 
+[x] **Navigation Bar and Footer** - I styled and cleaned up the top menu and footer
+
+[x] **Login Page** - Centered the Login and fixed the checkbox options
+
+[x] **Flex Windows** - Flex added to all the pages for resizing
+
+[x] **Page Link Buttons** - All the links to lore and notes made into clean buttons
+
+[ ] **Images** I intend to pull from the DnD API but I haven't figured it out yet
