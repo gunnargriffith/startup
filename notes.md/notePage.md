@@ -92,6 +92,21 @@ grid - Display this element's children in a grid orientation.
 
 There are also many more examples including founts and selectors forked on CodePen
 
+# Javascript notes Start:
 
+Java script seems somewhat similar to Java, probably intentionally. 
+To "print" it's console.log("string") and s% is space
 
+console.time -> console.timeEnd for timers
 
+Import with <script src="javascript.js"></script>and run things using onclick="functionName()"
+
+The varibale 'let' is changeable, and var 'const' is not
+
+Strings can be done with a single quote ' and there are several boolean functions doable for checking strings for some reason. 
+
+Functions: function functionName(var){
+return ret;
+}
+
+You can pass functions as parameters to take an "Anonymous" function that can do multiple this using those other functions 
