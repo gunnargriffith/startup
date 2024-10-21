@@ -110,3 +110,15 @@ return ret;
 }
 
 You can pass functions as parameters to take an "Anonymous" function that can do multiple this using those other functions 
+
+Functions can be written shorthand using an arrow. 
+// standard function syntax
+a.sort(function (v1, v2) {
+  return v1 - v2;
+});
+
+// arrow function syntax
+a.sort((v1, v2) => v1 - v2);
+
+Javascript has arrays similar to Java ones. Here is a table of functions https://learn.cs260.click/page/javascript/array/array_md
+
