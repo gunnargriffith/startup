@@ -122,3 +122,34 @@ a.sort((v1, v2) => v1 - v2);
 
 Javascript has arrays similar to Java ones. Here is a table of functions https://learn.cs260.click/page/javascript/array/array_md
 
+You can convert JSON to, and from, JavaScript using the JSON.parse and JSON.stringify functions.
+
+For the object class you make an object then can add things to it with obj.subobject = 'Thing'
+
+Or object literal syntax like this 
+const obj = {
+  a: 3,
+  b: 'fish',
+};
+
+They act similarly to maps
+
+Classes an inheritance essentially works like C++
+
+What the heck is '==='
+
+Try->catch->finally
+
+Global - Visible to all code
+Module - Visible to all code running in a module
+Function - Visible within a function
+Block - Visible within a block of code delimited by curly braces
+
+var is universally affected by functions and stuff so it's not great to use
+
+Local storage can be found at application tad in dev tools, then storage>local storage and you can see your saved variables 
+
+Promise states:
+Pending: The operation is still in progress.
+Fulfilled: The operation completed successfully, and the result is available.
+Rejected: The operation failed, and an error or reason for failure is available.
