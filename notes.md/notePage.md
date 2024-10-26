@@ -153,3 +153,12 @@ Promise states:
 Pending: The operation is still in progress.
 Fulfilled: The operation completed successfully, and the result is available.
 Rejected: The operation failed, and an error or reason for failure is available.
+
+# Websocket 
+Vue combines HTML, CSS, and JavaScript into a single file. HTML is represented by a template element that can be aggregated into other templates.
+
+Like Vue, Svelte combines HTML, CSS, and JavaScript into a single file. The difference here is that Svelte requires a transpiler to generate browser-ready code, instead of a runtime virtual DOM.
+
+React combines JavaScript and HTML into its component format. CSS must be declared outside of the JSX file. The component itself leverages the functionality of JavaScript and can be represented as a function or class.
+
+An Angular component defines what JavaScript, HTML, and CSS are combined together. This keeps a fairly strong separation of files that are usually grouped together in a directory rather than using the single file representation.
