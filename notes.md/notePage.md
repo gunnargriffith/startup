@@ -162,3 +162,5 @@ Like Vue, Svelte combines HTML, CSS, and JavaScript into a single file. The diff
 React combines JavaScript and HTML into its component format. CSS must be declared outside of the JSX file. The component itself leverages the functionality of JavaScript and can be represented as a function or class.
 
 An Angular component defines what JavaScript, HTML, and CSS are combined together. This keeps a fairly strong separation of files that are usually grouped together in a directory rather than using the single file representation.
+
+Websocket improves performance and increases device coverage
