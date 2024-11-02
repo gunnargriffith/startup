@@ -164,3 +164,10 @@ React combines JavaScript and HTML into its component format. CSS must be declar
 An Angular component defines what JavaScript, HTML, and CSS are combined together. This keeps a fairly strong separation of files that are usually grouped together in a directory rather than using the single file representation.
 
 Websocket improves performance and increases device coverage
+
+Babel- is a tool that can translate texts to other code such as JSX to JS
+
+REACT - Uploading the react libraries enables you to use the JS stuff and React objects to "render" JS stuff in the HTML 
+
+Active Babel processor in CodePEn to use it 
+
