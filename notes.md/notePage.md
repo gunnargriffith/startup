@@ -171,3 +171,4 @@ REACT - Uploading the react libraries enables you to use the JS stuff and React 
 
 Active Babel processor in CodePEn to use it 
 
+DEPLOY: ./deployFiles.sh -k <yourpemkey> -h <yourdomain> -s simon
