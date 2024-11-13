@@ -1,35 +1,69 @@
 import React from 'react';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import './app.css';
+import { BrowserRouter, NavLink, Route, Routes } from 'react-router-dom';
+import { Login } from './login/login';
+import { GmPerrmissions } from './gmpermissions/gmpermissions';
+import { PlayerNotes } from './playernotes/playernotes';
+import { WorldLore } from './worldlore/worldlore';
 
 export default function App() {
   return (
-    <div>
-        <header>
-            <h1 className="titleWord">LoreCore</h1>    
+    <BrowserRouter>
+        <div>
+            <header>
+                <h1 className="titleWord">LoreCore</h1>    
 
-            <nav>
-                <ul className="navbar">
-                    <li><a href="index.html">Home</a></li>
-                    <li><a href="playernotes.html">Player Notes</a></li>
-                    <li><a href="worldlore.html">World Lore</a></li>
-                    <li><a href="gmpermissions.html">Edit Permissions</a></li>
-                </ul>
-            </nav>    
-        </header>
+                <nav>
+                    <ul className="navbar">
 
-        <main>App Stuff here</main>
+                        <li>
+                            <NavLink className='nav-link' to=''>
+                                Login
+                            </NavLink>
+                        </li>
+                        <li>
+                            <NavLink className='nav-link' to='playernotes'>
+                                Player Notes
+                            </NavLink>
+                        </li>
+                        <li>
+                            <NavLink className='nav-link' to='worldlore'>
+                                World Lore
+                            </NavLink>
+                        </li>
+                        <li>
+                            <NavLink className='nav-link' to='gmpermissions'>
+                                Edit Permissions
+                            </NavLink>
+                        </li>
+                    </ul>
+                </nav>    
+            </header>
 
-        <footer>
-            <hr />
-            <span className="text-reset">Author Name(s)</span>
-            <br />
-            <a href="https://github.com/gunnargriffith/startup">LoreCore GitHub</a>
-        </footer>
+            <Routes>
+                <Route path='/' element={<Login />} exact />
+                <Route path='/playernotes' element={<PlayerNotes />} />
+                <Route path='/worldlore' element={<WorldLore />} />
+                <Route path='/gmpermissions' element={<GmPerrmissions />} />
+                <Route path='*' element={<NotFound />} />
+            </Routes>
 
-    </div>
+            <footer>
+                <hr />
+                <span className="text-reset">Author Name(s)</span>
+                <br />
+                <a href="https://github.com/gunnargriffith/startup">LoreCore GitHub</a>
+            </footer>
+
+        </div>
+    </BrowserRouter>
 
 
 
     );
 }
+
+function NotFound() {
+    return <main className='container-fluid bg-secondary text-center'>404: Return to sender. Address unknown.</main>;
+  }
