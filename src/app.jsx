@@ -3,7 +3,7 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 import './app.css';
 import { BrowserRouter, NavLink, Route, Routes } from 'react-router-dom';
 import { Login } from './login/login';
-import { GmPerrmissions } from './gmpermissions/gmpermissions';
+import { GmPermissions } from './gmpermissions/gmpermissions';
 import { PlayerNotes } from './playernotes/playernotes';
 import { WorldLore } from './worldlore/worldlore';
 
@@ -45,7 +45,7 @@ export default function App() {
                 <Route path='/' element={<Login />} exact />
                 <Route path='/playernotes' element={<PlayerNotes />} />
                 <Route path='/worldlore' element={<WorldLore />} />
-                <Route path='/gmpermissions' element={<GmPerrmissions />} />
+                <Route path='/gmpermissions' element={<GmPermissions />} />
                 <Route path='*' element={<NotFound />} />
             </Routes>
 
