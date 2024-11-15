@@ -1,6 +1,7 @@
 import React from 'react';
 import { useNavigate } from 'react-router-dom';
 import { useState } from 'react';
+import { useEffect } from 'react';
 import './gmpermissions.css'
 
 
@@ -8,12 +9,23 @@ import './gmpermissions.css'
 export function GmPermissions() {
   const navigate = useNavigate();
 
-  const [selections, setSelections] = useState({
+  const defaultSelections = {
     generalHistory: { player: "Any", race: "Any", class: "Any" },
     pantheon: { player: "Any", race: "Any", class: "Any" },
     westFold: { player: "Any", race: "Any", class: "Any" },
     waterdeepGuilds: { player: "Any", race: "Any", class: "Any" },
+  };
+
+  // Initialize state with saved selections from localStorage, or use defaults
+  const [selections, setSelections] = useState(() => {
+    const savedSelections = localStorage.getItem('gmPermissionsSelections');
+    return savedSelections ? JSON.parse(savedSelections) : defaultSelections;
   });
+
+  // Save selections to localStorage whenever they change
+  useEffect(() => {
+    localStorage.setItem('gmPermissionsSelections', JSON.stringify(selections));
+  }, [selections]);
 
   const handleSelectionChange = (section, key, value) => {
     setSelections((prev) => ({
@@ -71,8 +83,8 @@ export function GmPermissions() {
           <span>General World History access:</span>
           <ul>
             <li>
-              <label htmlFor="player">Players: </label>
-              <select id="player" name="varPlayer" value={selections.generalHistory.player}
+              <label htmlFor="general-player">Players: </label>
+              <select id="general-player" name="varPlayer" value={selections.generalHistory.player}
               onChange={(e) =>
                 handleSelectionChange("generalHistory", "player", e.target.value)
               }>
@@ -85,8 +97,8 @@ export function GmPermissions() {
               </select>
             </li>
             <li>
-              <label htmlFor="Race">Races: </label>
-              <select id="Race" name="varRace" value={selections.generalHistory.race}
+              <label htmlFor="general-Race">Races: </label>
+              <select id="general-Race" name="varRace" value={selections.generalHistory.race}
               onChange={(e) =>
                 handleSelectionChange("generalHistory", "race", e.target.value)
               }>
@@ -102,8 +114,8 @@ export function GmPermissions() {
               </select>
             </li>
             <li>
-              <label htmlFor="Class">Classes: </label>
-              <select id="Class" name="varClass" value={selections.generalHistory.class}
+              <label htmlFor="general-Class">Classes: </label>
+              <select id="general-Class" name="varClass" value={selections.generalHistory.class}
               onChange={(e) =>
                 handleSelectionChange("generalHistory", "class", e.target.value)
               }>
@@ -129,12 +141,12 @@ export function GmPermissions() {
           <span>Pantheon access:</span> 
             <ul>
               <li>
-                <label for="player">Players: </label>
-                <select id="player" name="varPlayer" value={selections.pantheon.player}
+                <label htmlFor="pantheon-player">Players: </label>
+                <select id="pantheon-player" name="varPlayer" value={selections.pantheon.player}
               onChange={(e) =>
                 handleSelectionChange("pantheon", "player", e.target.value)
               }>
-                  <option selected>Any</option>
+                  <option >Any</option>
                   <option>None</option>
                   <option>Yosai</option>
                   <option>Ciel</option>
@@ -143,12 +155,12 @@ export function GmPermissions() {
                 </select>
               </li>
               <li>
-                <label for="Race">Races: </label>
-                <select id="Race" name="varRace" value={selections.pantheon.race}
+                <label htmlFor="pantheon-Race">Races: </label>
+                <select id="pantheon-Race" name="varRace" value={selections.pantheon.race}
               onChange={(e) =>
                 handleSelectionChange("pantheon", "race", e.target.value)
               }>
-                  <option selected>Any</option>
+                  <option >Any</option>
                   <option>Human</option>
                   <option>Elf</option>
                   <option>Half-Elf</option>
@@ -160,15 +172,15 @@ export function GmPermissions() {
                 </select>
               </li>
               <li>
-                <label for="Class">Classes: </label>
-                <select id="Class" name="varClass" value={selections.pantheon.class}
+                <label htmlFor="pantheon-Class">Classes: </label>
+                <select id="pantheon-Class" name="varClass" value={selections.pantheon.class}
               onChange={(e) =>
                 handleSelectionChange("pantheon", "class", e.target.value)
               }>
                   <option>Any</option>
                   <option>Barbarian</option>
                   <option>Fighter</option>
-                  <option selected>Cleric</option>
+                  <option>Cleric</option>
                   <option>Paladin</option>
                   <option>Monk</option>
                   <option>Rogue</option>
@@ -187,12 +199,12 @@ export function GmPermissions() {
             <span>The West Fold access:</span> 
             <ul>
             <li>
-              <label for="player">Players: </label>
-              <select id="player" name="varPlayer" value={selections.westFold.player}
+              <label htmlFor="westfold-player">Players: </label>
+              <select id="westfold-player" name="varPlayer" value={selections.westFold.player}
               onChange={(e) =>
                 handleSelectionChange("westFold", "player", e.target.value)
               }>
-                <option selected>Any</option>
+                <option >Any</option>
                 <option>None</option>
                 <option>Yosai</option>
                 <option>Ciel</option>
@@ -201,13 +213,13 @@ export function GmPermissions() {
               </select>
             </li>
             <li>
-              <label for="Race">Races: </label>
-              <select id="Race" name="varRace" value={selections.westFold.race}
+              <label htmlFor="westfold-Race">Races: </label>
+              <select id="westfold-Race" name="varRace" value={selections.westFold.race}
               onChange={(e) =>
                 handleSelectionChange("westFold", "race", e.target.value)
               }>
                 <option>Any</option>
-                <option selected>Human</option>
+                <option >Human</option>
                 <option>Elf</option>
                 <option>Half-Elf</option>
                 <option>Halfling</option>
@@ -218,12 +230,12 @@ export function GmPermissions() {
               </select>
             </li>
             <li>
-              <label for="Class">Classes: </label>
-              <select id="Class" name="varClass" value={selections.westFold.class}
+              <label htmlFor="westfold-Class">Classes: </label>
+              <select id="westfold-Class" name="varClass" value={selections.westFold.class}
               onChange={(e) =>
                 handleSelectionChange("westFold", "class", e.target.value)
               }>
-                <option selected>Any</option>
+                <option>Any</option>
                 <option>Barbarian</option>
                 <option>Fighter</option>
                 <option>Cleric</option>
@@ -245,26 +257,26 @@ export function GmPermissions() {
           <span>Waterdeep Guilds access:</span> 
           <ul>
             <li>
-              <label for="player">Players: </label>
-              <select id="player" name="varPlayer" value={selections.waterdeepGuilds.player}
+              <label htmlFor="waterdeep-player">Players: </label>
+              <select id="waterdeep-player" name="varPlayer" value={selections.waterdeepGuilds.player}
               onChange={(e) =>
                 handleSelectionChange("waterdeepGuilds", "player", e.target.value)
               }>
                 <option>Any</option>
                 <option>None</option>
                 <option>Yosai</option>
-                <option selected>Ciel</option>
+                <option>Ciel</option>
                 <option>Eliane</option>
                 <option>Brynhild</option>
               </select>
             </li>
             <li>
-              <label for="Race">Races: </label>
-              <select id="Race" name="varRace" value={selections.waterdeepGuilds.race}
+              <label htmlFor="waterdeep-Race">Races: </label>
+              <select id="waterdeep-Race" name="varRace" value={selections.waterdeepGuilds.race}
               onChange={(e) =>
                 handleSelectionChange("waterdeepGuilds", "race", e.target.value)
               }>
-                <option selected>Any</option>
+                <option>Any</option>
                 <option>Human</option>
                 <option>Elf</option>
                 <option>Half-Elf</option>
@@ -276,12 +288,12 @@ export function GmPermissions() {
               </select>
             </li>
             <li>
-              <label for="Class">Classes: </label>
-              <select id="Class" name="varClass" value={selections.westFold.class}
+              <label htmlFor="waterdeep-Class">Classes: </label>
+              <select id="waterdeep-Class" name="varClass" value={selections.westFold.class}
               onChange={(e) =>
-                handleSelectionChange("westFold", "class", e.target.value)
+                handleSelectionChange("waterdeepGuilds", "class", e.target.value)
               }>
-                <option selected>Any</option>
+                <option>Any</option>
                 <option>Barbarian</option>
                 <option>Fighter</option>
                 <option>Cleric</option>
