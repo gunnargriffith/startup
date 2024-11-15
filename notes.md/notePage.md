@@ -172,3 +172,6 @@ REACT - Uploading the react libraries enables you to use the JS stuff and React 
 Active Babel processor in CodePEn to use it 
 
 DEPLOY: ./deployFiles.sh -k yourpemkey -h yourdomain -s simon
+
+
+Current startup progress - Dropdwons now function using react use states and drop down to save the values and actually pass them to world lore. Login state still doesn't do anything and the 4 lore pieces themselves are still hard-coded in. I need to figure out how to make the titles change dynamically and how to add actual lore chunks. 
