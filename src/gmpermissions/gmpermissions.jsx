@@ -312,6 +312,7 @@ export function GmPermissions() {
         </div>
         <br  />
     </div>
+    <button onClick={handleNavigate}>Save Changes</button>
   </main>
   );
 }
