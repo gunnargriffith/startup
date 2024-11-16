@@ -48,3 +48,13 @@ This is the structure and start of the LoreCore website.
 [x] **Page Link Buttons** - All the links to lore and notes made into clean buttons
 
 [ ] **Images** I intend to pull from the DnD API but I haven't figured it out yet
+
+# React Integration
+
+[x] Installed and applied the required react software
+
+[x] Restructures the code after the pattern seen in Simon to use react
+
+[x] Complete revamp of the Gmpermissions section and world lore to make the permission have more function
+
+[] Player notes is still a skeleton
