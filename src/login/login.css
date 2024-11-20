@@ -1,0 +1,58 @@
+/* Style for the main fieldset */
+.loginMain {
+    border: 1px solid #ccc;
+    padding: 20px;
+    border-radius: 8px;
+    max-width: 400px;
+    margin: 20px auto;
+    background-color: #f9f9f9;
+    text-align: center;
+  }
+  
+  /* Style for checkboxes */
+  .checkBoxLabel {
+    font-size: 16px;
+    margin: 10px;
+    cursor: pointer;
+  }
+  
+  .textbox {
+    margin-right: 10px;
+  }
+  
+  .checkBoxLabel input[type='checkbox'] {
+    margin-right: 8px;
+  }
+  
+  /* Input fields and buttons */
+  .input-group {
+    margin: 10px 0;
+  }
+  
+  .input-group-text {
+    background-color: #e9ecef;
+    border: 1px solid #ced4da;
+    padding: 6px 12px;
+  }
+  
+  .form-control {
+    padding: 6px;
+    border: 1px solid #ced4da;
+    border-radius: 4px;
+  }
+  
+  button {
+    margin: 10px;
+    padding: 10px 20px;
+    font-size: 16px;
+    border: none;
+    border-radius: 4px;
+    background-color: #007bff;
+    color: white;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+  }
+  
+  button:hover {
+    background-color: #0056b3;
+  }
