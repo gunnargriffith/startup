@@ -1,20 +1,20 @@
 import React, { useState } from 'react';
-import { useNavigate } from 'react-router-dom'; // Import useNavigate for routing
-import './login.css'; // Import the CSS file
+import { useNavigate } from 'react-router-dom'; 
+import './login.css'; 
 
 export function Login() {
-  const [selectedRole, setSelectedRole] = useState(null); // Track selected role
-  const navigate = useNavigate(); // React Router's hook for navigation
+  const [selectedRole, setSelectedRole] = useState(null); 
+  const navigate = useNavigate(); 
 
   const handleCheckboxChange = (role) => {
-    setSelectedRole(selectedRole === role ? null : role); // Toggle the role or clear selection
+    setSelectedRole(selectedRole === role ? null : role); 
   };
 
   const handleLogin = () => {
     if (selectedRole === 'Game Master') {
-      navigate('/gmpermissions'); // Navigate to the Game Master page
+      navigate('/gmpermissions'); 
     } else if (selectedRole === 'Player') {
-      navigate('/playernotes'); // Navigate to the Player Notes page
+      navigate('/playernotes');
     } else {
       alert('Please select a role before proceeding.'); // Prompt the user to select a role
     }
