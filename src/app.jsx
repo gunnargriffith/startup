@@ -1,66 +1,59 @@
-import React from 'react';
-import 'bootstrap/dist/css/bootstrap.min.css';
-import './app.css';
-import { BrowserRouter, NavLink, Route, Routes } from 'react-router-dom';
-import { Login } from './login/login';
-import { GmPermissions } from './gmpermissions/gmpermissions';
+import React, { useState, useEffect } from 'react';
+import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import { PlayerNotes } from './playernotes/playernotes';
-import { WorldLore } from './worldlore/worldlore';
+import { NotePage } from './playernotes/notepage';
 
-export default function App() {
-  return (
-    <BrowserRouter>
-        <div>
-            <header>
-                <h1 className="titleWord">LoreCore</h1>    
+export function App() {
+  const [notes, setNotes] = useState(() => {
+    // Load notes from localStorage on initial render
+    const savedNotes = localStorage.getItem('notes');
+    return savedNotes ? JSON.parse(savedNotes) : [];
+  });
 
-                <nav>
-                    <ul className="navbar">
+  // Persist notes to localStorage whenever they change
+  useEffect(() => {
+    localStorage.setItem('notes', JSON.stringify(notes));
+  }, [notes]);
 
-                        <li>
-                            <NavLink className='nav-link' to=''>
-                                Login
-                            </NavLink>
-                        </li>
-                        <li>
-                            <NavLink className='nav-link' to='playernotes'>
-                                Player Notes
-                            </NavLink>
-                        </li>
-                        <li>
-                            <NavLink className='nav-link' to='worldlore'>
-                                World Lore
-                            </NavLink>
-                        </li>
-                        <li>
-                            <NavLink className='nav-link' to='gmpermissions'>
-                                Edit Permissions
-                            </NavLink>
-                        </li>
-                    </ul>
-                </nav>    
-            </header>
+  const addNote = (title) => {
+    const newNote = {
+      id: notes.length ? notes[notes.length - 1].id + 1 : 1, // Unique ID
+      title,
+      content: '',
+    };
+    setNotes([...notes, newNote]);
+  };
 
-            <Routes>
-                <Route path='/' element={<Login />} exact />
-                <Route path='/playernotes' element={<PlayerNotes />} />
-                <Route path='/worldlore' element={<WorldLore />} />
-                <Route path='/gmpermissions' element={<GmPermissions />} />
-                <Route path='*' element={<NotFound />} />
-            </Routes>
+  const deleteNote = (id) => {
+    setNotes(notes.filter((note) => note.id !== id));
+  };
 
-            <footer>
-                <hr />
-                <span className="text-reset">Author Name(s)</span>
-                <br />
-                <a href="https://github.com/gunnargriffith/startup">LoreCore GitHub</a>
-            </footer>
-
-        </div>
-    </BrowserRouter>
+  const updateNote = (id, updatedContent) => {
+    setNotes(
+      notes.map((note) =>
+        note.id === id ? { ...note, content: updatedContent } : note
+      )
     );
-}
+  };
 
-function NotFound() {
-  return <main className='container-fluid bg-secondary text-center'>404: Return to sender. Address unknown.</main>;
+  return (
+    <Router>
+      <Routes>
+        <Route
+          path="/"
+          element={
+            <PlayerNotes
+              notes={notes}
+              addNote={addNote}
+              deleteNote={deleteNote}
+            />
+          }
+        />
+        <Route
+          path="/notes/:id"
+          element={<NotePage notes={notes} updateNote={updateNote} />}
+        />
+      </Routes>
+    </Router>
+  );
 }
