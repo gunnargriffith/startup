@@ -1,45 +1,95 @@
-.noteEditor {
+
+/* General styling for the main container */
+main {
+    display: flex;
+    justify-content: center;
+    align-items: center;
     padding: 20px;
+    background-color: #f4f4f9;
+    min-height: calc(100vh - 100px);
+  }
+  
+  /* Note Editor Container */
+  .noteEditor {
+    background-color: #ffffff;
+    border: 1px solid #ddd;
+    border-radius: 10px;
+    padding: 20px;
+    max-width: 600px;
+    width: 100%;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  }
+  
+  /* Note Title */
+  .noteEditor h2 {
+    font-size: 1.8em;
+    color: #14572c;
+    margin-bottom: 20px;
     text-align: center;
+    font-family: 'Georgia', serif;
   }
   
+  /* Textarea Styling */
   .noteTextarea {
-    width: 90%;
+    width: 100%;
     height: 300px;
-    margin: 10px 0;
-    padding: 10px;
-    font-size: 16px;
-    border: 1px solid #ccc;
-    border-radius: 4px;
+    padding: 15px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    font-size: 1em;
+    font-family: 'Arial', sans-serif;
+    resize: vertical;
+    background-color: #f9f9f9;
   }
   
+  .noteTextarea:focus {
+    outline: none;
+    border-color: #14572c;
+    background-color: #ffffff;
+    box-shadow: 0 0 5px rgba(20, 87, 44, 0.5);
+  }
+  
+  /* Actions Container */
   .noteActions {
-    margin-top: 10px;
+    margin-top: 20px;
+    display: flex;
+    justify-content: space-between;
   }
   
-  .saveButton,
-  .cancelButton {
-    margin: 0 5px;
-    padding: 5px 15px;
+  /* Save Button */
+  .saveButton {
+    background-color: #14572c;
+    color: white;
     border: none;
-    border-radius: 4px;
+    border-radius: 5px;
+    padding: 10px 20px;
+    font-size: 1em;
     cursor: pointer;
   }
   
-  .saveButton {
-    background-color: #28a745;
-    color: white;
-  }
-  
   .saveButton:hover {
-    background-color: #218838;
+    background-color: #0f421f;
   }
   
+  /* Cancel Button */
   .cancelButton {
-    background-color: #ffc107;
+    background-color: #d9534f;
     color: white;
+    border: none;
+    border-radius: 5px;
+    padding: 10px 20px;
+    font-size: 1em;
+    cursor: pointer;
   }
   
   .cancelButton:hover {
-    background-color: #e0a800;
+    background-color: #c9302c;
+  }
+  
+  /* Not Found Message */
+  .noteEditor div {
+    font-size: 1.2em;
+    color: #d9534f;
+    text-align: center;
+    margin-top: 20px;
   }

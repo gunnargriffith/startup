@@ -1,23 +1,103 @@
-.addNote {
-  margin-top: 15px;
+
+/* General styling for the main container */
+main {
   display: flex;
-  gap: 10px;
+  justify-content: center;
+  align-items: center;
+  padding: 20px;
+  background-color: #f4f4f9;
+  min-height: calc(100vh - 100px);
+}
+
+/* Notes Box Container */
+.notesBox {
+  background-color: #ffffff;
+  border: 1px solid #ddd;
+  border-radius: 10px;
+  padding: 20px;
+  max-width: 500px;
+  width: 100%;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+/* Title */
+.NotesTitle {
+  font-size: 1.8em;
+  color: #14572c;
+  margin-bottom: 20px;
+  text-align: center;
+  font-family: 'Georgia', serif;
+}
+
+/* Notes List */
+ul {
+  list-style-type: none;
+  padding: 0;
+  margin: 0;
+}
+
+li {
+  margin-bottom: 15px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+/* Note Link Styling */
+.noteEntry {
+  text-decoration: none;
+  color: #14572c;
+  font-size: 1.2em;
+  flex: 1;
+  margin-right: 10px;
+}
+
+.noteEntry:hover {
+  text-decoration: underline;
+  color: #0f421f;
+}
+
+/* Delete Button */
+.deleteButton {
+  background-color: #ff6b6b;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  padding: 5px 10px;
+  cursor: pointer;
+}
+
+.deleteButton:hover {
+  background-color: #d9534f;
+}
+
+/* Add Note Section */
+.addNote {
+  margin-top: 20px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
 }
 
 .noteInput {
   flex: 1;
-  padding: 5px;
+  padding: 10px;
+  border: 1px solid #ddd;
+  border-radius: 5px;
+  margin-right: 10px;
+  font-size: 1em;
 }
 
 .addNoteButton {
-  padding: 5px 10px;
-  background-color: #007bff;
+  background-color: #14572c;
   color: white;
   border: none;
-  border-radius: 4px;
+  border-radius: 5px;
+  padding: 10px 15px;
+  font-size: 1em;
   cursor: pointer;
 }
 
 .addNoteButton:hover {
-  background-color: #0056b3;
+  background-color: #0f421f;
 }
