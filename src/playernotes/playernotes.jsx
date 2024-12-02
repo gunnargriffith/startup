@@ -20,7 +20,7 @@ export function PlayerNotes({ notes, addNote, deleteNote }) {
           <ul>
             {notes.map((note) => (
               <li key={note.id}>
-                <Link className="noteEntry" to={`/notes/${note.id}`}>
+                <Link className="noteEntry" to={`/playernotes/${note.id}`}>
                   {note.title}
                 </Link>
                 <button
