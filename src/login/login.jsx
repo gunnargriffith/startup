@@ -1,10 +1,38 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { useNavigate } from 'react-router-dom'; 
 import './login.css'; 
 
 export function Login() {
   const [selectedRole, setSelectedRole] = useState(null); 
+  const [abilityScore, setAbilityScore] = useState(null); // State to hold API data
   const navigate = useNavigate(); 
+
+  // Array of API URLs
+  const apiUrls = [
+    'https://www.dnd5eapi.co/api/ability-scores/str',
+    'https://www.dnd5eapi.co/api/ability-scores/con',
+    'https://www.dnd5eapi.co/api/ability-scores/dex',
+    'https://www.dnd5eapi.co/api/ability-scores/int',
+    'https://www.dnd5eapi.co/api/ability-scores/wis',
+    'https://www.dnd5eapi.co/api/ability-scores/cha',
+  ];
+
+  // Fetch random API data on component mount
+  useEffect(() => {
+    const fetchAbilityScore = async () => {
+      try {
+        // Pick a random API URL
+        const randomUrl = apiUrls[Math.floor(Math.random() * apiUrls.length)];
+        const response = await fetch(randomUrl);
+        const data = await response.json();
+        setAbilityScore(data);
+      } catch (error) {
+        console.error('Error fetching ability score data:', error);
+      }
+    };
+
+    fetchAbilityScore();
+  }, []);
 
   const handleCheckboxChange = (role) => {
     setSelectedRole(selectedRole === role ? null : role); 
@@ -16,7 +44,7 @@ export function Login() {
     } else if (selectedRole === 'Player') {
       navigate('/playernotes');
     } else {
-      alert('Please select a role before proceeding.'); // Prompt the user to select a role
+      alert('Please select a role before proceeding.');
     }
   };
 
@@ -72,6 +100,19 @@ export function Login() {
           New Profile
         </button>
       </fieldset>
+
+      <section className="apiData">
+        <h5>Ability Score Spotlight</h5>
+        {abilityScore ? (
+          <div className="abilityInfo">
+            <p><strong>Name:</strong> {abilityScore.full_name}</p>
+            <p><strong>Abbreviation:</strong> {abilityScore.index.toUpperCase()}</p>
+            <p><strong>Description:</strong> {abilityScore.desc.join(' ')}</p>
+          </div>
+        ) : (
+          <p>Loading ability score data...</p>
+        )}
+      </section>
     </main>
   );
 }

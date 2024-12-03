@@ -56,3 +56,54 @@
   button:hover {
     background-color: #0056b3;
   }
+
+  /* New Style for API Data Section */
+.apiData {
+  margin-top: 20px;
+  padding: 15px;
+  text-align: center;
+  background-color: #f4f4f4;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  max-width: 500px;
+  margin-left: auto;
+  margin-right: auto;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.apiData h5 {
+  margin-bottom: 10px;
+  font-size: 1.5rem;
+  color: #333;
+}
+
+.abilityInfo {
+  text-align: left;
+  display: inline-block;
+  font-size: 1rem;
+  color: #444;
+  line-height: 1.6;
+}
+
+/* Responsive design for smaller screens */
+@media (max-width: 768px) {
+  .apiData {
+    font-size: 0.9rem;
+    padding: 10px;
+  }
+
+  .loginMain {
+    padding: 15px;
+    font-size: 0.9rem;
+  }
+
+  button {
+    font-size: 14px;
+    padding: 8px 15px;
+  }
+}
+
+footer{
+  display: none;
+}
+  
