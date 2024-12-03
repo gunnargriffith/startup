@@ -58,3 +58,6 @@ This is the structure and start of the LoreCore website.
 [x] Complete revamp of the Gmpermissions section and world lore to make the permission have more function
 
 [] Player notes is still a skeleton
+
+# Service Deliverable
+
