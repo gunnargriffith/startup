@@ -16,6 +16,8 @@ export function GmPermissions() {
     waterdeepGuilds: { player: "Any", race: "Any", class: "Any" },
   };
 
+  const permissions = location.state || JSON.parse(localStorage.getItem('gmPermissionsSelections')) || defaultPermissions;
+
   // Initialize state with saved selections from localStorage, or use defaults
   const [selections, setSelections] = useState(() => {
     const savedSelections = localStorage.getItem('gmPermissionsSelections');
@@ -38,7 +40,8 @@ export function GmPermissions() {
   };
 
   const handleNavigate = () => {
-    navigate('/worldlore', { state: selections });
+    localStorage.setItem('gmPermissionsSelections', JSON.stringify(selections)); // Save to localStorage
+    navigate('/worldlore', { state: selections }); // Pass selections via navigate
   };
 
   return (
@@ -289,7 +292,7 @@ export function GmPermissions() {
             </li>
             <li>
               <label htmlFor="waterdeep-Class">Classes: </label>
-              <select id="waterdeep-Class" name="varClass" value={selections.westFold.class}
+              <select id="waterdeep-Class" name="varClass" value={selections.waterdeepGuilds.class}
               onChange={(e) =>
                 handleSelectionChange("waterdeepGuilds", "class", e.target.value)
               }>

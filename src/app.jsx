@@ -7,6 +7,7 @@ import { GmPermissions } from './gmpermissions/gmpermissions';
 import { PlayerNotes } from './playernotes/playernotes';
 import { NotePage } from './playernotes/notepage';
 import { WorldLore } from './worldlore/worldlore';
+import { EditPage } from './worldlore/editpage'
 
 export default function App() {
   const [notes, setNotes] = useState(() => {
@@ -15,14 +16,14 @@ export default function App() {
     return savedNotes ? JSON.parse(savedNotes) : [];
   });
 
-  // Persist notes to localStorage whenever they change
+
   useEffect(() => {
     localStorage.setItem('notes', JSON.stringify(notes));
   }, [notes]);
 
   const addNote = (title) => {
     const newNote = {
-      id: notes.length ? notes[notes.length - 1].id + 1 : 1, // Unique ID
+      id: notes.length ? notes[notes.length - 1].id + 1 : 1,
       title,
       content: '',
     };
@@ -92,6 +93,9 @@ export default function App() {
           <Route path="/worldlore" element={<WorldLore />} />
           <Route path="/gmpermissions" element={<GmPermissions />} />
           <Route path="*" element={<NotFound />} />
+          <Route path="/worldlore" element={<WorldLore />} />
+          <Route path="/edit/:section" element={<EditPage />} />
+
         </Routes>
 
         <footer>

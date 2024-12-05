@@ -1,54 +1,46 @@
 import React from 'react';
+import { useNavigate } from 'react-router-dom';
 import './worldlore.css';
-import { useLocation } from 'react-router-dom';
 
 export function WorldLore() {
-  const location = useLocation();
+  const navigate = useNavigate();
 
-  // Extract the permissions data from location.state or provide a fallback
-  const permissions = location.state || {
-    generalHistory: { player: "None", race: "None", class: "None" },
-    pantheon: { player: "None", race: "None", class: "None" },
-    westFold: { player: "None", race: "None", class: "None" },
-    waterdeepGuilds: { player: "None", race: "None", class: "None" },
+  
+  const defaultPermissions = {
+    generalHistory: { player: "Any", race: "Any", class: "Any" },
+    pantheon: { player: "Any", race: "Any", class: "Any" },
+    westFold: { player: "Any", race: "Any", class: "Any" },
+    waterdeepGuilds: { player: "Any", race: "Any", class: "Any" },
+  };
+
+  const permissions = location.state || JSON.parse(localStorage.getItem('gmPermissionsSelections')) || defaultPermissions;
+
+  const handleNavigate = (sectionName) => {
+    navigate(`/edit/${sectionName}`, { state: { permissions: permissions[sectionName] } });
   };
 
   return (
     <main>
       <fieldset className="loreBox">
         <h2 className="sectionTitle">World Lore</h2>
-        
-        {/* General World History */}
-        <div className="loreEntryContainer">
-          <a href="#" className="loreEntry">General World History</a>
-          <span className="accessText">
-            --Access: Player: {permissions.generalHistory.player}, Race: {permissions.generalHistory.race}, Class: {permissions.generalHistory.class}--
-          </span>
-        </div>
-        
-        {/* Pantheon */}
-        <div className="loreEntryContainer">
-          <a href="#" className="loreEntry">Pantheon</a>
-          <span className="accessText">
-            --Access: Player: {permissions.pantheon.player}, Race: {permissions.pantheon.race}, Class: {permissions.pantheon.class}--
-          </span>
-        </div>
-        
-        {/* The West Fold */}
-        <div className="loreEntryContainer">
-          <a href="#" className="loreEntry">The West Fold</a>
-          <span className="accessText">
-            --Access: Player: {permissions.westFold.player}, Race: {permissions.westFold.race}, Class: {permissions.westFold.class}--
-          </span>
-        </div>
-        
-        {/* Waterdeep Guilds */}
-        <div className="loreEntryContainer">
-          <a href="#" className="loreEntry">Waterdeep Guilds</a>
-          <span className="accessText">
-            --Access: Player: {permissions.waterdeepGuilds.player}, Race: {permissions.waterdeepGuilds.race}, Class: {permissions.waterdeepGuilds.class}--
-          </span>
-        </div>
+
+        {/* Render clickable sections */}
+        {Object.keys(permissions).map((section) => (
+          <div key={section} className="loreEntryContainer">
+            <a
+              href="#"
+              className="loreEntry"
+              onClick={() => handleNavigate(section)}
+            >
+              {section
+                .replace(/([A-Z])/g, " $1")
+                .replace(/^./, (str) => str.toUpperCase())}
+            </a>
+            <span className="accessText">
+              --Access: Player: {permissions[section].player}, Race: {permissions[section].race}, Class: {permissions[section].class}--
+            </span>
+          </div>
+        ))}
       </fieldset>
     </main>
   );
