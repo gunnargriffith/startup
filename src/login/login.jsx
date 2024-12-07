@@ -1,11 +1,35 @@
 import React, { useState, useEffect } from 'react';
-import { useNavigate } from 'react-router-dom'; 
-import './login.css'; 
+import { useNavigate } from 'react-router-dom';
+import './login.css';
+
+// Simulated backend service endpoint (replace with a real URL later)
+const BACKEND_URL = 'https://placeholder-backend.com/api/login';
+
+// Class to represent user roles and authentication status
+class AuthStatus {
+  constructor() {
+    this.isAuthenticated = false;
+    this.role = null;
+  }
+
+  authenticate(role) {
+    this.isAuthenticated = true;
+    this.role = role;
+  }
+
+  clearAuth() {
+    this.isAuthenticated = false;
+    this.role = null;
+  }
+}
 
 export function Login() {
-  const [selectedRole, setSelectedRole] = useState(null); 
+  const [selectedRole, setSelectedRole] = useState(null);
+  const [email, setEmail] = useState('');
+  const [password, setPassword] = useState('');
+  const [authStatus, setAuthStatus] = useState(new AuthStatus());
   const [abilityScore, setAbilityScore] = useState(null); // State to hold API data
-  const navigate = useNavigate(); 
+  const navigate = useNavigate();
 
   // Array of API URLs
   const apiUrls = [
@@ -21,7 +45,6 @@ export function Login() {
   useEffect(() => {
     const fetchAbilityScore = async () => {
       try {
-        // Pick a random API URL
         const randomUrl = apiUrls[Math.floor(Math.random() * apiUrls.length)];
         const response = await fetch(randomUrl);
         const data = await response.json();
@@ -35,17 +58,48 @@ export function Login() {
   }, []);
 
   const handleCheckboxChange = (role) => {
-    setSelectedRole(selectedRole === role ? null : role); 
+    setSelectedRole(selectedRole === role ? null : role);
   };
 
-  const handleLogin = () => {
-    if (selectedRole === 'Game Master') {
-      navigate('/gmpermissions'); 
-    } else if (selectedRole === 'Player') {
-      navigate('/playernotes');
-    } else {
-      alert('Please select a role before proceeding.');
+  const handleLogin = async () => {
+    if (!email || !password || !selectedRole) {
+      alert('Please fill out all fields and select a role before proceeding.');
+      return;
     }
+
+    try {
+      // Simulate a backend request
+      const response = await fetch(BACKEND_URL, {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ email, password, role: selectedRole }),
+      });
+
+      const result = await response.json();
+
+      if (response.ok) {
+        // Update authentication status
+        const newAuthStatus = new AuthStatus();
+        newAuthStatus.authenticate(selectedRole);
+        setAuthStatus(newAuthStatus);
+
+        // Navigate based on role
+        if (selectedRole === 'Game Master') {
+          navigate('/gmpermissions');
+        } else if (selectedRole === 'Player') {
+          navigate('/playernotes');
+        }
+      } else {
+        alert(`Login failed: ${result.message}`);
+      }
+    } catch (error) {
+      console.error('Error during login:', error);
+      alert('Failed to connect to the backend. Please try again later.');
+    }
+  };
+
+  const handleNewProfile = () => {
+    alert('Redirecting to create a new profile...'); // Placeholder for future functionality
   };
 
   return (
@@ -84,19 +138,31 @@ export function Login() {
 
         <div className="input-group mb-3">
           <span className="input-group-text">@</span>
-          <input className="form-control" type="text" placeholder="your@email.com" />
+          <input
+            className="form-control"
+            type="text"
+            placeholder="your@email.com"
+            value={email}
+            onChange={(e) => setEmail(e.target.value)}
+          />
         </div>
 
         <div className="input-group mb-3">
           <span className="input-group-text">🔒</span>
-          <input className="form-control" type="password" placeholder="password" />
+          <input
+            className="form-control"
+            type="password"
+            placeholder="password"
+            value={password}
+            onChange={(e) => setPassword(e.target.value)}
+          />
         </div>
 
         <button type="submit" onClick={handleLogin}>
           Login
         </button>
 
-        <button type="submit" onClick={handleLogin}>
+        <button type="submit" onClick={handleNewProfile}>
           New Profile
         </button>
       </fieldset>
