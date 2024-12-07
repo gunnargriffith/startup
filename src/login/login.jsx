@@ -28,7 +28,7 @@ export function Login() {
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
   const [authStatus, setAuthStatus] = useState(new AuthStatus());
-  const [abilityScore, setAbilityScore] = useState(null); // State to hold API data
+  const [abilityScore, setAbilityScore] = useState(null); 
   const navigate = useNavigate();
 
   // Array of API URLs
