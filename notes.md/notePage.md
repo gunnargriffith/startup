@@ -175,3 +175,12 @@ DEPLOY: ./deployFiles.sh -k yourpemkey -h yourdomain -s simon
 
 
 Current startup progress - Dropdwons now function using react use states and drop down to save the values and actually pass them to world lore. Login state still doesn't do anything and the 4 lore pieces themselves are still hard-coded in. I need to figure out how to make the titles change dynamically and how to add actual lore chunks. 
+
+
+Deployment to the website can be automated. 
+
+Multer (which I just installed) handles requests for static files, handles some errors, and provides a GET endpoint to serve up a file from the uploads directory.
+The ability yot store files on the server may be critical for what I am building my website to do. 
+Your server only has 8 GB to work with unless you pay for a service that holds more.
+
+MongoDB is the data service we will be using. It uses JSON objects. 
