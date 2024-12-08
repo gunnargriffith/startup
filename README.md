@@ -61,3 +61,16 @@ This is the structure and start of the LoreCore website.
 
 # Service Deliverable
 
+[x] **Express service integration** - yes
+
+[x] **Static middleware** - Core functionally revamped to be actalluy functional
+
+[x] **Calls to third party endpoints** - Dnd API integrated to highlight the uses of one random character skill every login
+
+[x] **Backend serivce endpoints** - Filler login endpoint made to be used later
+
+
+
+
+
+
